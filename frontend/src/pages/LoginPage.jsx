@@ -91,7 +91,7 @@ const LoginPage = () => {
                 </form>
 
                 <div className="mt-6 text-center">
-                  <Link to="/signup" classNameauth-link>
+                  <Link to="/signup" className="auth-link">
                     Don't have an account ? Sign Up
                   </Link>
                 </div>
@@ -102,7 +102,7 @@ const LoginPage = () => {
             <div className="hidden md:w1/2 md:flex items-center justify-center p-6 bg-linear-to-bl from-slate-800/20 to-transparent">
               <div>
                 <img
-                  src="/signup.png"
+                  src="/login.png"
                   alt="People using mobile devices"
                   className="w-full h-auto object-contain"
                 />
