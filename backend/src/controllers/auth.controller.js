@@ -50,7 +50,7 @@ export const signup = async (req, res) => {
 
       res.status(201).json({
         success: true,
-        data: {
+        user: {
           _id: savedUser._id,
           fullName: savedUser.fullName,
           email: savedUser.email,
