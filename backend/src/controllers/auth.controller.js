@@ -124,8 +124,6 @@ export const logout = (_, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    console.log(req.body);
-
     const { profilePic } = req.body;
     if (!profilePic)
       return res
@@ -137,12 +135,20 @@ export const updateProfile = async (req, res) => {
 
     const updatedUser = await User.findByIdAndUpdate(
       userId,
-      { profilePic: uploadResponse.secure_url },
-      { new: true },
+      {
+        $set: {
+          profilePic: uploadResponse.secure_url,
+        },
+      },
+      {
+        returnDocument: "after",
+      },
     ).select("-password");
-    res
-      .status(200)
-      .json({ success: true, message: "User pic updated", user: updatedUser });
+    res.status(200).json({
+      success: true,
+      message: "User profile updated",
+      user: updatedUser,
+    });
   } catch (error) {
     console.error("Error in updating profile:", error);
     res.status(500).json({ success: false, message: "Internal server error" });

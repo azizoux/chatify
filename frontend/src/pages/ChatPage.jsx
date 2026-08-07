@@ -5,10 +5,10 @@ import ChatsList from "../components/ChatsList";
 import ContactList from "../components/ContactList";
 import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
 import ProfileHeader from "../components/ProfileHeader";
-import { useAuthStore } from "../store/useAuthStore";
+import { useChatStore } from "../store/useChatStore";
 
 const ChatPage = () => {
-  const { activeTab, selectedUser } = useAuthStore();
+  const { activeTab, selectedUser } = useChatStore();
   return (
     <div className="relative w-full max-w-6xl h-200">
       <BorderAnimatedContainer>
