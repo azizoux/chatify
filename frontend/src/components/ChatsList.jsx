@@ -24,7 +24,7 @@ const ChatsList = () => {
         >
           <div className="flex items-center gap-3">
             {/* TODO: FIX THIS ONLINE STATUS AND MAKE IT WORK WITH SOCKET */}
-            <div className={`avatar online`}>
+            <div className={`avatar avatar-online`}>
               <div className="size-12 rounded-full">
                 <img
                   src={chat.profilePic || "/avatar.png"}
