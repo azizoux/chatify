@@ -28,7 +28,7 @@ export const useChatStore = create((set, get) => ({
         set({ allContacts: data.users });
       }
     } catch (error) {
-      toast.error("error.message.data.message");
+      toast.error(error.response.data.message);
       console.log("Error in getAllContacts zustand:", error);
     } finally {
       set({ isUsersLoading: false });
@@ -44,10 +44,26 @@ export const useChatStore = create((set, get) => ({
         set({ chats: data.chatPartners });
       }
     } catch (error) {
-      toast.error("error.message.data.message");
+      toast.error(error.response.data.message);
       console.log("Error in getMyChatPartners zustand:", error);
     } finally {
       set({ isUsersLoading: false });
+    }
+  },
+
+  getMessageByUserId: async (userId) => {
+    try {
+      const { data } = await axiosInstance.get(
+        `/messages/${userId.toString()}`,
+      );
+      if (data.success) {
+        console.log(data);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log("Error in getMessageByUserId Zustand:", error);
+      toast.error(error.response.data.message);
     }
   },
 }));
