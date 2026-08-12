@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useChatStore } from "../store/useChatStore";
 import { useAuthStore } from "../store/useAuthStore";
 import ChatHeader from "./ChatHeader";
@@ -10,6 +10,15 @@ const ChatContainer = () => {
   const { getMessageByUserId, selectedUser, messages, isMessagesLoading } =
     useChatStore();
   const { authUser } = useAuthStore();
+
+  const messageEndRef = useRef(null);
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({
+      behavior: messages.length > 1 ? "smooth" : "auto",
+    });
+  }, [messages]);
+
   useEffect(() => {
     getMessageByUserId(selectedUser._id);
   }, [selectedUser, getMessageByUserId]);
@@ -22,7 +31,7 @@ const ChatContainer = () => {
             {messages.map((msg) => (
               <div
                 key={msg._id}
-                className={`chat ${msg.senderId === authUser._Id ? "chat-end" : "chat-start"}`}
+                className={`chat ${String(msg.senderId) === String(authUser._id) ? "chat-end" : "chat-start"}`}
               >
                 <div
                   className={`chat-bubble relative ${
@@ -39,12 +48,17 @@ const ChatContainer = () => {
                     />
                   )}
                   {msg.text && <p className="mt-2">{msg.text}</p>}
-                  <p className="text-xs mt-1 opacity-75 flex items-center gap-1">
-                    {new Date(msg.createdAt).toISOString().slice(11, 16)}
-                  </p>
+
+                  <span className="mt-1 flex items-center gap-1 text-xs opacity-75">
+                    {new Date(msg.createdAt).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
                 </div>
               </div>
             ))}
+            <div ref={messageEndRef} />
           </div>
         ) : isMessagesLoading ? (
           <MessagesLoadingSkeleton />
