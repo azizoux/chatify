@@ -55,14 +55,11 @@ export const createGame = async (req, res) => {
     };
 
     // Définir les joueurs
-    newParty.users[0].id = myId;
+    newParty.users[0].userId = myId;
     newParty.users[0].username = req.user.fullName;
 
-    newParty.users[1].id = adversorUser._id;
+    newParty.users[1].userId = adversorUser._id;
     newParty.users[1].username = adversorUser.fullName;
-
-    // Définir le tour initial
-    newParty.party.tourId = myId;
 
     // Ajouter la partie
     partiesTable.parties.push(newParty);

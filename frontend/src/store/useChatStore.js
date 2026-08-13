@@ -18,7 +18,10 @@ export const useChatStore = create((set, get) => ({
     set({ isSoundEnabled: !get().isSoundEnabled });
   },
 
-  setActiveTab: (tab) => set({ activeTab: tab }),
+  setActiveTab: (tab) => {
+    if (tab === "game") set({ selectedUser: null });
+    set({ activeTab: tab });
+  },
   setSelectedUser: (user) => set({ selectedUser: user }),
 
   getAllContacts: async () => {

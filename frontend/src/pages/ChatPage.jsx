@@ -3,13 +3,17 @@ import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 import ChatContainer from "../components/ChatContainer";
 import ChatsList from "../components/ChatsList";
 import ContactList from "../components/ContactList";
+import GameContainer from "../components/GameContainer";
 import GameList from "../components/GameList";
 import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
+import NoGamePlaceholder from "../components/NoGamePlaceholder";
 import ProfileHeader from "../components/ProfileHeader";
 import { useChatStore } from "../store/useChatStore";
+import { useGameStore } from "../store/useGameStore";
 
 const ChatPage = () => {
   const { activeTab, selectedUser } = useChatStore();
+  const { selectedGame, selectedGameAdversor } = useGameStore();
   return (
     <div className="relative w-full max-w-6xl h-screen p-8">
       <BorderAnimatedContainer>
@@ -30,7 +34,14 @@ const ChatPage = () => {
         </div>
         {/* RIGHT SIDE */}
         <div className="flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm">
-          {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
+          {(activeTab === "chats" || activeTab === "contacts") &&
+            (selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />)}
+          {activeTab === "game" &&
+            (selectedGame && selectedGameAdversor ? (
+              <GameContainer />
+            ) : (
+              <NoGamePlaceholder />
+            ))}
         </div>
       </BorderAnimatedContainer>
     </div>

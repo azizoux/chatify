@@ -1,7 +1,7 @@
 export const data = {
   users: [
     {
-      id: 0,
+      id: 1,
       username: "",
       color: "#f50e37",
       pionNumber: 0,
@@ -11,7 +11,7 @@ export const data = {
       lostNumber: 0,
     },
     {
-      id: 0,
+      id: 2,
       username: "",
       color: "#4724f0",
       pionNumber: 0,
@@ -38,6 +38,8 @@ export const data = {
       color: "gray",
       abs: 0,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 2,
@@ -45,6 +47,8 @@ export const data = {
       color: "gray",
       abs: 0,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 3,
@@ -52,6 +56,8 @@ export const data = {
       color: "gray",
       abs: 0,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 4,
@@ -59,6 +65,8 @@ export const data = {
       color: "gray",
       abs: 0,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 5,
@@ -66,6 +74,8 @@ export const data = {
       color: "gray",
       abs: 0,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 6,
@@ -73,6 +83,8 @@ export const data = {
       color: "gray",
       abs: 1,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 7,
@@ -80,6 +92,8 @@ export const data = {
       color: "gray",
       abs: 1,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 8,
@@ -87,6 +101,8 @@ export const data = {
       color: "gray",
       abs: 1,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 9,
@@ -94,6 +110,8 @@ export const data = {
       color: "gray",
       abs: 1,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 10,
@@ -101,6 +119,8 @@ export const data = {
       color: "gray",
       abs: 1,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 11,
@@ -108,6 +128,8 @@ export const data = {
       color: "gray",
       abs: 2,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 12,
@@ -115,6 +137,8 @@ export const data = {
       color: "gray",
       abs: 2,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 13,
@@ -122,6 +146,8 @@ export const data = {
       color: "gray",
       abs: 2,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 14,
@@ -129,6 +155,8 @@ export const data = {
       color: "gray",
       abs: 2,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 15,
@@ -136,6 +164,8 @@ export const data = {
       color: "gray",
       abs: 2,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 16,
@@ -143,6 +173,8 @@ export const data = {
       color: "gray",
       abs: 3,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 17,
@@ -150,6 +182,8 @@ export const data = {
       color: "gray",
       abs: 3,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 18,
@@ -157,6 +191,8 @@ export const data = {
       color: "gray",
       abs: 3,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 19,
@@ -164,6 +200,8 @@ export const data = {
       color: "gray",
       abs: 3,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 20,
@@ -171,6 +209,8 @@ export const data = {
       color: "gray",
       abs: 3,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 21,
@@ -178,6 +218,8 @@ export const data = {
       color: "gray",
       abs: 4,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 22,
@@ -185,6 +227,8 @@ export const data = {
       color: "gray",
       abs: 4,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 23,
@@ -192,6 +236,8 @@ export const data = {
       color: "gray",
       abs: 4,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 24,
@@ -199,6 +245,8 @@ export const data = {
       color: "gray",
       abs: 4,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 25,
@@ -206,6 +254,8 @@ export const data = {
       color: "gray",
       abs: 4,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 26,
@@ -213,6 +263,8 @@ export const data = {
       color: "gray",
       abs: 5,
       ord: 0,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 27,
@@ -220,6 +272,8 @@ export const data = {
       color: "gray",
       abs: 5,
       ord: 1,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 28,
@@ -227,6 +281,8 @@ export const data = {
       color: "gray",
       abs: 5,
       ord: 2,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 29,
@@ -234,6 +290,8 @@ export const data = {
       color: "gray",
       abs: 5,
       ord: 3,
+      isSelected: false,
+      isValidMove: false,
     },
     {
       id: 30,
@@ -241,6 +299,8 @@ export const data = {
       color: "gray",
       abs: 5,
       ord: 4,
+      isSelected: false,
+      isValidMove: false,
     },
   ],
 };
