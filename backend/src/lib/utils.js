@@ -17,3 +17,15 @@ export const generateToken = (userId, res) => {
   });
   return token;
 };
+
+export const getParties = async (req, res) => {
+  // Récupérer la table des parties
+  const partiesTable = await Game.findById(ENV.PARTY_TABLE_ID);
+  if (!partiesTable) {
+    return res.status(404).json({
+      success: false,
+      message: "Party table not found",
+    });
+    return partiesTable;
+  }
+};

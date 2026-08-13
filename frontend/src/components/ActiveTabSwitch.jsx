@@ -27,6 +27,18 @@ const ActiveTabSwitch = () => {
       >
         Contacts
       </button>
+
+      <button
+        type="button"
+        onClick={() => setActiveTab("game")}
+        className={`tab rounded-lg transition-all ${
+          activeTab === "game"
+            ? "bg-cyan-500/20 text-cyan-400"
+            : "text-slate-400 hover:text-slate-200"
+        }`}
+      >
+        Jeux
+      </button>
     </div>
   );
 };

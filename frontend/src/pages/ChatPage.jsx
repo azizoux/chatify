@@ -3,6 +3,7 @@ import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 import ChatContainer from "../components/ChatContainer";
 import ChatsList from "../components/ChatsList";
 import ContactList from "../components/ContactList";
+import GameList from "../components/GameList";
 import NoConversationPlaceholder from "../components/NoConversationPlaceholder";
 import ProfileHeader from "../components/ProfileHeader";
 import { useChatStore } from "../store/useChatStore";
@@ -18,7 +19,13 @@ const ChatPage = () => {
           <ActiveTabSwitch />
 
           <div className="flex-1 overflow-y-auto p-4 space-y-2">
-            {activeTab === "chats" ? <ChatsList /> : <ContactList />}
+            {activeTab === "chats" ? (
+              <ChatsList />
+            ) : activeTab === "game" ? (
+              <GameList />
+            ) : (
+              <ContactList />
+            )}
           </div>
         </div>
         {/* RIGHT SIDE */}
