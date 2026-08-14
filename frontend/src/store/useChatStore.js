@@ -112,7 +112,7 @@ export const useChatStore = create((set, get) => ({
     const { selectedUser, isSoundEnabled } = get();
     if (!selectedUser) return;
 
-    const socket = useAuthStore.getState().socket;
+    const { socket } = useAuthStore.getState();
 
     socket.on("newMessage", (newMessage) => {
       const isMessageSendFromSelectedUser =
